@@ -4,6 +4,7 @@ require "uri"
 require "concurrent/hash"
 require "concurrent/array"
 require "dry/inflector"
+require "pathname"
 
 module Hanami
   # Hanami application configuration
@@ -74,7 +75,7 @@ module Hanami
     end
 
     def root=(root)
-      settings[:root] = root
+      settings[:root] = Pathname(root)
     end
 
     def root
